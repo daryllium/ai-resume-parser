@@ -4,13 +4,17 @@
     <title>Resume Analysis</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; margin: 40px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); animation: fadeIn 0.8s ease-in;}
         .score-box { text-align: center; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
         .high-score { background: #e6fffa; color: #2d3748; border: 1px solid #38b2ac; }
         .low-score { background: #fff5f5; color: #2d3748; border: 1px solid #feb2b2; }
         .score-number { font-size: 48px; font-weight: bold; display: block; }
         h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
         .chip { display: inline-block; background: #edf2f7; padding: 5px 12px; border-radius: 15px; margin: 5px; font-size: 14px; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -42,7 +46,7 @@
                 <input type="hidden" name="score" value="{{ match_score }}">
                 <input type="hidden" name="summary" value="{{ summary }}">
                 <input type="hidden" name="fit" value="{{ fit_explanation }}">
-                <input type="hidden" name="missing" value="{{ missing_skills|join(',') }}">
+                <input type="hidden" name="missing" value="{{ missing_skills|join('||') }}">
                 <button type="submit" style="padding: 10px; background: #2d3748; color: white; border-radius: 5px; border: none; cursor: pointer;">
                     Download PDF Report
                 </button>
