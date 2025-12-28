@@ -40,7 +40,7 @@ Before running, ensure you have:
 
 ### 1. Clone & Setup
 ```bash
-git clone [https://github.com/daryllium/ai-resume-parser.git](https://github.com/your-username/resume-analyzer.git)
+git clone [https://github.com/daryllium/ai-resume-parser.git]
 cd ai-resume-parser
 python3 -m venv .venv
 source .venv/bin/activate
